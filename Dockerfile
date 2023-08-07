@@ -11,7 +11,8 @@ RUN apt-get update && apt-get install -y \
     git \
     && rm -rf /var/lib/apt/lists/*
 
-RUN git clone https://github.com/Lee-Miseon/titanic-web.git .
+COPY requirements.txt .
+COPY app.py .
 
 RUN pip3 install -r requirements.txt
 
